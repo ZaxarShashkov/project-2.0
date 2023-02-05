@@ -1,11 +1,11 @@
 const app = document.querySelector('#app');
-console.log(app);
+
+const menu = document.createElement('div');
+menu.className = 'menu';
+app.appendChild(menu);
+
 
 const createMenu = () => {
-
-    const menu = document.createElement('div');
-    menu.className = 'menu';
-    app.appendChild(menu);
 
 
     const doodle = document.createElement('div');
@@ -37,7 +37,6 @@ const createMenu = () => {
        </svg>`;
         platform.className = 'platform';
         platform.style.transform = `translate(${platformYBlue}px,${platformXBlue}px)`
-        // platformXBlue += 20;
         platformYBlue += 15;
     }
 
@@ -76,6 +75,7 @@ const createMenu = () => {
     canvas.className = 'canvas';
     canvas.style.width = 200 + 'px';
     canvas.style.height = 200 + 'px';
+
     const context = canvas.getContext('2d');
 
     context.beginPath();
