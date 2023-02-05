@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+#app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    position: relative;
+    background-image: url(img/bck.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 400px;
+    height: 650px;
+    overflow: hidden;
+}
+
+.doodle {
+    position: absolute;
+    top: 530px;
+    left: 180px;
+}
+
+.menu_platform {
+    display: flex;
+}
+
+.monster {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    width: 80.5px;
+    height: 45px;
+    animation: flying 1s steps(4) infinite;
+}
+
+.hole {
+    position: absolute;
+    height: 55px;
+    width: 55px;
+    background: url(img/menu_hole.png);
+    top: 45px;
+    left: 300px;
+}
+
+.canvas {
+    position: absolute;
+    top: 110px;
+    left: 150px;
+}
+
+.avoid {
+    position: absolute;
+    top: 140px;
+    left: 295px;
+    font-size: 1.7em;
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+    transform: rotate(18deg);
+}
+
+.title {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+}
+
+.ufo {
+    position: absolute;
+    width: 83px;
+    height: 121px;
+    background: url(img/menu_ufo.png);
+    left: 170px;
+    top: 270px;
+}
+
+.play {
+    position: absolute;
+    top: 400px;
+    left: 135px;
+    font-size: 1.5em;
+    animation: test 1.5s steps(9) infinite;
+}
+
+@keyframes test {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flying {
+    from {
+        background: url('img/menuMonster.png') 0 0;
+    }
+
+    to {
+        background: url('img/menuMonster.png') -322px 0;
+    }
+}
+
+/* 83 121 */
