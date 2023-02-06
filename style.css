@@ -27,6 +27,42 @@ body {
     overflow: hidden;
 }
 
+/* loading */
+
+.load_title {
+    position: absolute;
+    top: 180px;
+    left: 90px;
+    font-size: 2.2em;
+    color: rgb(196, 27, 27);
+    transform: rotate(-10deg);
+}
+
+.loading {
+    position: absolute;
+    top: 390px;
+    left: 140px;
+    width: 120px;
+    height: 20px;
+    background:
+        linear-gradient(#efd7bd 0 0) 0/0% no-repeat #efe7d6;
+    animation: p1 2s  linear;
+}
+
+@keyframes p1 {
+    100% {
+        background-size: 100%
+    }
+}
+
+.continue {
+    position: absolute;
+    top: 350px;
+    left: 140px;
+     font-size: 1.5em;
+     animation: test 1.5s steps(9) infinite;
+}
+
 
 /* menu */
 

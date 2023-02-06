@@ -5,6 +5,41 @@ container.className = 'container';
 app.appendChild(container);
 
 
+const load = () => {
+    const loading = document.createElement('div');
+    loading.className = 'loading';
+    container.appendChild(loading);
+
+
+    const loadTitle = document.createElement('p');
+    loadTitle.className = 'load_title';
+    loadTitle.textContent = 'doodle jump';
+    container.appendChild(loadTitle);
+
+    const copyRight = document.createElement('p');
+    copyRight.className = 'copy_right';
+    copyRight.textContent = ''
+    container.appendChild(copyRight);
+
+    const goToMenu = () => {
+        loading.style.display = 'none';
+
+        const p = document.createElement('p')
+        p.className = 'continue';
+        p.textContent = 'continue';
+        container.appendChild(p);
+
+        p.addEventListener('click', () => {
+            p.style.display = 'none';
+            loadTitle.style.display = 'none';
+            switchToMainPage();
+        })
+    }
+    setTimeout(goToMenu, 2000);
+
+}
+load()
+
 const createMenu = () => {
 
     const menuContainer = document.createElement('div');
@@ -109,7 +144,7 @@ const createMenu = () => {
         switchToGamePage();
     })
 }
-createMenu();
+
 
 
 const play = document.querySelector('.play');
@@ -121,3 +156,51 @@ const createGame = () => {
     console.log('asda')
 }
 
+"use strict";
+
+window.onhashchange = switchToStateFromURLHash;
+
+var SPAState = {};
+
+
+function switchToStateFromURLHash() {
+    var URLHash = window.location.hash;
+
+    var stateStr = URLHash.substr(1);
+    let container = document.querySelector('.container');
+
+
+    switch (stateStr) {
+        case 'Main':
+            container += createMenu();
+            break;
+        case 'About':
+            pageHTML += "<h3>О нас</h3>";
+            pageHTML += "<p>Мы круты!</p>";
+            break;
+        case 'test':
+            pageHTML += "<h3>TEST</h3>";
+            pageHTML += "<p>Мы круты!</p>";
+            break;
+    }
+}
+
+
+function switchToState(newState) {
+    var stateStr = newState.pagename;
+    location.hash = stateStr;
+}
+
+function switchToMainPage() {
+    switchToState({
+        pagename: 'Main'
+    });
+}
+
+function switchToAboutPage() {
+    switchToState({
+        pagename: 'About'
+    });
+}
+
+switchToStateFromURLHash();
