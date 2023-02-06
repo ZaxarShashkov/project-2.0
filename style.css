@@ -32,7 +32,7 @@ body {
 .load_title {
     position: absolute;
     top: 180px;
-    left: 90px;
+    left: 77.5px;
     font-size: 2.2em;
     color: rgb(196, 27, 27);
     transform: rotate(-10deg);
@@ -61,6 +61,12 @@ body {
     left: 140px;
      font-size: 1.5em;
      animation: test 1.5s steps(9) infinite;
+}
+
+.copy_right {
+    position: absolute;
+    top: 580px;
+    left: 122px;
 }
 
 

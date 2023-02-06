@@ -18,7 +18,7 @@ const load = () => {
 
     const copyRight = document.createElement('p');
     copyRight.className = 'copy_right';
-    copyRight.textContent = ''
+    copyRight.textContent = 'Copyright © 2023';
     container.appendChild(copyRight);
 
     const goToMenu = () => {
@@ -29,8 +29,10 @@ const load = () => {
         p.textContent = 'continue';
         container.appendChild(p);
 
+
         p.addEventListener('click', () => {
             p.style.display = 'none';
+            copyRight.style.display = 'none';
             loadTitle.style.display = 'none';
             switchToMainPage();
         })
