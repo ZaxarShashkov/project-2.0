@@ -19,12 +19,9 @@ body {
     align-items: center;
 }
 
-.menu {
+.container {
     position: relative;
-    background-image: url(img/bck.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    background: url(img/bck.png) center/cover;
     width: 400px;
     height: 650px;
     overflow: hidden;
@@ -32,6 +29,11 @@ body {
 
 
 /* menu */
+
+.menu_container {
+    width: 400px;
+    height: 650px;
+}
 
 .doodle {
     position: absolute;
