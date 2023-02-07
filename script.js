@@ -58,7 +58,7 @@ const createMenu = () => {
     container.appendChild(menuContainer);
 
     const doodle = document.createElement('div');
-    doodle.className = 'doodle';
+    doodle.className = 'doodle_menu';
     doodle.innerHTML = `<svg 
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -152,7 +152,7 @@ const createMenu = () => {
 
     play.addEventListener('click', () => {
         switchToGamePage();
-        let childrenMenu = menuContainer.childNodes;
+        let childrenMenu = container.childNodes;
         let arrChild = [];
         childrenMenu.forEach(child => {
             arrChild.push(child);
