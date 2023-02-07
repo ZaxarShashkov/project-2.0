@@ -163,6 +163,19 @@ body {
     display: none;
 }
 
+.restart {
+    position: absolute;
+    top: 455px;
+    left: 144px;
+    background-image: url("img/play_again.png");
+    border-radius: 44%;
+    width: 112px;
+    height: 41px;
+    z-index: 1;
+    border: none;
+    cursor: pointer;
+}
+
 
 @keyframes test {
     0% {

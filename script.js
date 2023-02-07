@@ -292,15 +292,6 @@ const fall = () => {
     })
 }
 
-// Game Over
-const gameOver = () => {
-    console.log('Game Over...');
-    isGameOver = true;
-    window.cancelAnimationFrame(jumpUp);
-    window.cancelAnimationFrame(jumpDown);
-    doodle.style.bottom = doodlePosBot + 10 + 'px';
-}
-
 
 // Controller || Ready!!!
 
@@ -346,8 +337,19 @@ const moveRight = () => {
         movingRight = window.requestAnimationFrame(moveRight);
     }
 }
-// 
 
+// Game Over
+const gameOver = () => {
+    console.log('Game Over...');
+    isGameOver = true;
+    window.cancelAnimationFrame(jumpUp);
+    window.cancelAnimationFrame(jumpDown);
+    doodle.style.bottom = doodlePosBot + 10 + 'px';
+    const restart = document.createElement('button');
+    restart.className = 'restart';
+    container.appendChild(restart);
+    restart.addEventListener('click', );
+}
 
 // start
 
