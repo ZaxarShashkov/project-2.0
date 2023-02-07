@@ -31,7 +31,7 @@ body {
 
 .load_title {
     position: absolute;
-    top: 180px;
+    top: 150px;
     left: 77.5px;
     font-size: 2.2em;
     color: rgb(196, 27, 27);
@@ -46,7 +46,7 @@ body {
     height: 20px;
     background:
         linear-gradient(#efd7bd 0 0) 0/0% no-repeat #efe7d6;
-    animation: p1 2s  linear;
+    animation: p1 2s linear;
 }
 
 @keyframes p1 {
@@ -59,8 +59,8 @@ body {
     position: absolute;
     top: 350px;
     left: 140px;
-     font-size: 1.5em;
-     animation: test 1.5s steps(9) infinite;
+    font-size: 1.5em;
+    animation: test 1.5s steps(9) infinite;
 }
 
 .copy_right {
@@ -146,6 +146,20 @@ body {
     animation: test 1.5s steps(9) infinite;
 }
 
+.green {
+    position: absolute;
+    /* transform: translateZ(0); */
+}
+
+.blue {
+    position: absolute;
+}
+
+.remove {
+    display: none;
+}
+
+
 @keyframes test {
     0% {
         opacity: 1;
@@ -170,4 +184,3 @@ body {
     }
 }
 
-/* 83 121 */
