@@ -46,7 +46,7 @@ const load = () => {
     setTimeout(goToMenu, 2000);
 
 }
-load()
+
 
 
 // Menu
@@ -387,6 +387,9 @@ function switchToStateFromURLHash() {
         case 'Game':
             container += start();
             break;
+        case 'Loader':
+            container += load();
+            break;
     }
 }
 
@@ -394,6 +397,12 @@ function switchToStateFromURLHash() {
 function switchToState(newState) {
     var stateStr = newState.pagename;
     location.hash = stateStr;
+}
+
+function switchToLoadPage() {
+    switchToState({
+        pagename: 'Loader'
+    });
 }
 
 function switchToMainPage() {
