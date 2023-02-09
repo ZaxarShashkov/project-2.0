@@ -240,7 +240,7 @@ const createPlatGreen = () => {
 // Move platforms || Ready!!!
 
 const movePlatforms = () => {
-    if (doodlePosBot > 75) {
+    if (doodlePosBot > 100) {
         platforms.forEach(platform => {
             platform.bot -= 3.5;
             let visual = platform.visual;
