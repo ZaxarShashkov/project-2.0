@@ -167,8 +167,6 @@ const createMenu = () => {
 
 // Game
 
-// Create character
-
 const doodle = document.createElement('div');
 
 let isGameOver = false;
