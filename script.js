@@ -181,7 +181,7 @@ let jumpDown;
 // Platforms
 const platGreenCount = 12;
 const platBlueCount = 4;
-const platforms = [];
+let platforms = [];
 const color = 'green';
 
 // Movement
@@ -255,7 +255,7 @@ const movePlatforms = () => {
             }
         })
     }
-    window.requestAnimationFrame(movePlatforms)
+    movePlat = window.requestAnimationFrame(movePlatforms);
 }
 
 
@@ -345,10 +345,34 @@ const gameOver = () => {
     window.cancelAnimationFrame(jumpUp);
     window.cancelAnimationFrame(jumpDown);
     doodle.style.bottom = doodlePosBot + 10 + 'px';
-    const restart = document.createElement('button');
-    restart.className = 'restart';
-    container.appendChild(restart);
-    restart.addEventListener('click', );
+    restart();
+}
+
+const restart = () => {
+
+    const restartBtn = document.createElement('button');
+    restartBtn.className = 'restart';
+    container.appendChild(restartBtn);
+
+    restartBtn.addEventListener('click', () => {
+        isGameOver = false;
+        window.cancelAnimationFrame(jumpUp);
+        window.cancelAnimationFrame(jumpDown);
+        window.cancelAnimationFrame(movePlat);
+        restartBtn.remove()
+        let childrenMenu = container.childNodes;
+        let arrChild = [];
+        childrenMenu.forEach(child => {
+            arrChild.push(child);
+
+        });
+        arrChild.forEach(child => {
+            child.remove();
+        })
+
+        platforms = [];
+        start()
+    });
 }
 
 // start
