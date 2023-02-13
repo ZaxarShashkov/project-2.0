@@ -324,6 +324,20 @@ const moveRight = () => {
   }
 };
 
+const setScore = () => {
+  container.appendChild(score);
+  score.classList.add("score");
+  count += Math.floor(Math.random() * 10);
+  score.innerHTML = count;
+};
+
+const createBestScore = () => {
+    const bestScore = document.createElement('div');
+    bestScore.className = 'best_score';
+    container.appendChild(bestScore);
+    bestScore.innerHTML = `Ваш счет ${count}`; 
+}
+
 // Game Over
 
 const gameOver = () => {
@@ -331,6 +345,8 @@ const gameOver = () => {
   isGameOver = true;
   window.cancelAnimationFrame(jumpUp);
   window.cancelAnimationFrame(jumpDown);
+  clearInterval(intervalScore);
+  createBestScore();
   doodle.style.bottom = doodlePosBot + 10 + "px";
   restart();
 };
@@ -341,11 +357,9 @@ const restart = () => {
   const restartBtn = document.createElement("button");
   restartBtn.className = "restart";
   container.appendChild(restartBtn);
-
   restartBtn.addEventListener("click", () => {
     isGameOver = false;
     count = 0;
-    clearInterval(intervalScore);
     window.cancelAnimationFrame(jumpUp);
     window.cancelAnimationFrame(jumpDown);
     window.cancelAnimationFrame(movePlat);
@@ -364,13 +378,6 @@ const restart = () => {
   });
 };
 
-const setScore = () => {
-  container.appendChild(score);
-  score.classList.add("score");
-  count += Math.floor(Math.random() * 10);
-  score.innerHTML = count;
-  console.log(count);
-};
 
 // start
 
