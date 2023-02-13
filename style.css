@@ -176,6 +176,13 @@ body {
     cursor: pointer;
 }
 
+.score {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    font-size: 1em;
+}
+
 
 @keyframes test {
     0% {
