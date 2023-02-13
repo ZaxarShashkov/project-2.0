@@ -158,6 +158,11 @@ const createMenu = () => {
 
 const doodle = document.createElement("div");
 
+let count = 0;
+const score = document.createElement("div");
+
+let intervalScore;
+
 let isGameOver = false;
 
 // Jumping
@@ -339,6 +344,8 @@ const restart = () => {
 
   restartBtn.addEventListener("click", () => {
     isGameOver = false;
+    count = 0;
+    clearInterval(intervalScore);
     window.cancelAnimationFrame(jumpUp);
     window.cancelAnimationFrame(jumpDown);
     window.cancelAnimationFrame(movePlat);
@@ -357,9 +364,6 @@ const restart = () => {
   });
 };
 
-let count = 0;
-const score = document.createElement("div");
-
 const setScore = () => {
   container.appendChild(score);
   score.classList.add("score");
@@ -373,7 +377,7 @@ const setScore = () => {
 const start = () => {
   if (!isGameOver) {
     addDoodle();
-    setInterval(setScore, 1000);
+    intervalScore = setInterval(setScore, 1000);
     createPlatGreen();
     window.requestAnimationFrame(movePlatforms);
     document.addEventListener("keydown", controller);
