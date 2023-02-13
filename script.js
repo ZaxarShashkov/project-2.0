@@ -227,6 +227,24 @@ const createPlatGreen = () => {
   }
 };
 
+// const createPlatBlue = () => {
+//   const svg = `<svg 
+//   xmlns="http://www.w3.org/2000/svg"
+//   xmlns:xlink="http://www.w3.org/1999/xlink"
+//   width="59px" height="17px">
+//  <image  x="0px" y="0px" width="59px" height="17px"  xlink:href="data:img/png;base64,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" />
+//  </svg>`;
+//   for (let i = 0; i < platBlueCount; i++) {
+//     // Расстояние между платформами
+//     let platformDist = 600 / platBlueCount;
+//     // Расстояние от начал до первой платформы
+//     let newPlatformBot = 150 + i * platformDist;
+//     // instance classa Platform
+//     let newPlatform = new Platform(newPlatformBot, color, svg);
+//     platforms.push(newPlatform);
+//   }
+// };
+
 // Move platforms || Ready!!!
 
 const movePlatforms = () => {
@@ -332,11 +350,11 @@ const setScore = () => {
 };
 
 const createBestScore = () => {
-    const bestScore = document.createElement('div');
-    bestScore.className = 'best_score';
-    container.appendChild(bestScore);
-    bestScore.innerHTML = `Ваш счет ${count}`; 
-}
+  const bestScore = document.createElement("div");
+  bestScore.className = "best_score";
+  container.appendChild(bestScore);
+  bestScore.innerHTML = `Ваш счет : ${count}`;
+};
 
 // Game Over
 
@@ -378,7 +396,6 @@ const restart = () => {
   });
 };
 
-
 // start
 
 const start = () => {
@@ -386,6 +403,7 @@ const start = () => {
     addDoodle();
     intervalScore = setInterval(setScore, 1000);
     createPlatGreen();
+    // createPlatBlue();
     window.requestAnimationFrame(movePlatforms);
     document.addEventListener("keydown", controller);
     jump();

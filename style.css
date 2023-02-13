@@ -178,17 +178,19 @@ body {
 
 .score {
     position: absolute;
-    top: 30px;
-    left: 10px;
+    color: #6bb915;
+    top: 15px;
+    left: 5px;
     font-size: 1em;
 }
 
 .best_score{
     position: absolute;
-    width: 100px;
+    color: #6bb915;
+    width: 130px;
     height: 35px;
     top: 300px;
-    left: 150px;
+    left: 135px;
     border-radius: 5px;
     text-align: center;
     padding-top: 5px;
