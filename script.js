@@ -308,6 +308,19 @@ const controller = (e) => {
   }
 };
 
+const createControllerMobile = () => {
+  const leftButton = document.createElement('button');
+  leftButton.className = 'btn_left';
+  const rightButton = document.createElement('button');
+  rightButton.className = 'btn_right';
+  container.appendChild(leftButton);
+  container.appendChild(rightButton);
+}
+
+const controllerMobile = () => {
+
+}
+
 const moveLeft = () => {
   doodle.classList.remove("doodle_right");
   doodle.classList.add("doodle");
@@ -397,6 +410,7 @@ const restart = () => {
 const start = () => {
   if (!isGameOver) {
     addDoodle();
+    createControllerMobile()
     intervalScore = setInterval(setScore, 1000);
     createPlatGreen();
     window.requestAnimationFrame(movePlatforms);
