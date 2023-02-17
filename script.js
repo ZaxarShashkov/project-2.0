@@ -290,8 +290,6 @@ const fall = () => {
   });
 };
 
-
-
 // Controller
 
 const controller = (e) => {
@@ -309,17 +307,15 @@ const controller = (e) => {
 };
 
 const createControllerMobile = () => {
-  const leftButton = document.createElement('button');
-  leftButton.className = 'btn_left';
-  const rightButton = document.createElement('button');
-  rightButton.className = 'btn_right';
+  const leftButton = document.createElement("button");
+  leftButton.className = "btn_left";
+  const rightButton = document.createElement("button");
+  rightButton.className = "btn_right";
   container.appendChild(leftButton);
   container.appendChild(rightButton);
-}
-
-const controllerMobile = () => {
-
-}
+  leftButton.addEventListener("click", moveLeft);
+  rightButton.addEventListener("click", moveRight);
+};
 
 const moveLeft = () => {
   doodle.classList.remove("doodle_right");
@@ -410,7 +406,7 @@ const restart = () => {
 const start = () => {
   if (!isGameOver) {
     addDoodle();
-    createControllerMobile()
+    createControllerMobile();
     intervalScore = setInterval(setScore, 1000);
     createPlatGreen();
     window.requestAnimationFrame(movePlatforms);
