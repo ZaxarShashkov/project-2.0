@@ -148,11 +148,27 @@ body {
 
 .doodle {
     position: absolute;
+    width: 62px;
+    height: 60px;
+    background: url(img/blue-lik-left.png);
+}
+
+.doodle_right {
+    position: absolute;
+    width: 62px;
+    height: 60px;
+    background: url(img/blue-lik-right.png);
+}
+
+.doodle_odskok {
+    position: absolute;
+    width: 62px;
+    height: 60px;
+    background: url(img/blue-lik-left-odskok.png);
 }
 
 .green {
     position: absolute;
-    /* transform: translateZ(0); */
 }
 
 .blue {
@@ -220,3 +236,19 @@ body {
         background: url('img/menuMonster.png') -322px 0;
     }
 }
+
+@media all and (max-width:400px) {
+    #app {
+        display: block;
+    }
+}
+
+
+/* #app {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
