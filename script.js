@@ -4,6 +4,8 @@ const container = document.createElement("div");
 container.className = "container";
 app.appendChild(container);
 
+location.hash = 'load';
+
 // Audio 
 
 const menuAudio = document.createElement('audio');
@@ -52,13 +54,14 @@ const load = () => {
 load();
 
 // Menu
-
+1
 const createMenu = () => {
   const menuContainer = document.createElement("div");
   menuContainer.className = "menu_container";
   container.appendChild(menuContainer);
 
   menuAudio.play();
+  gameAudio.pause();
 
   const doodle = document.createElement("div");
   doodle.className = "doodle_menu";
@@ -439,12 +442,16 @@ function switchToStateFromURLHash() {
 
   switch (stateStr) {
     case "Main":
+      container.innerHTML = null;
       container += createMenu();
       break;
     case "Game":
+      container.innerHTML = null;
       container += start();
       break;
     case "Loader":
+      container.innerHTML = null;
+      container += load();
       break;
   }
 }
