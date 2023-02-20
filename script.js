@@ -1,8 +1,14 @@
-const app = document.querySelector("#app");
+let app = document.querySelector("#app");
 
 const container = document.createElement("div");
 container.className = "container";
 app.appendChild(container);
+
+// Audio 
+
+const menuAudio = document.createElement('audio');
+menuAudio.src = './audio/menu_audio.mp3';
+menuAudio.preload = 'auto';
 
 // Loading
 
@@ -51,6 +57,8 @@ const createMenu = () => {
   const menuContainer = document.createElement("div");
   menuContainer.className = "menu_container";
   container.appendChild(menuContainer);
+
+  menuAudio.play();
 
   const doodle = document.createElement("div");
   doodle.className = "doodle_menu";
@@ -393,6 +401,12 @@ const restart = () => {
   });
 };
 
+// Game audio
+
+const gameAudio = document.createElement('audio');
+gameAudio.src = './audio/game_audio.mp3';
+gameAudio.preload = 'auto';
+
 // start
 
 const start = () => {
@@ -404,6 +418,8 @@ const start = () => {
     window.requestAnimationFrame(movePlatforms);
     document.addEventListener("keydown", controller);
     jump();
+    gameAudio.play();
+    menuAudio.pause();
   }
 };
 

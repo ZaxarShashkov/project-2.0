@@ -248,6 +248,7 @@ body {
 @media all and (max-width:400px) {
     #app {
         display: block;
+        overflow: hidden;
     }
 
     .btn_right {
